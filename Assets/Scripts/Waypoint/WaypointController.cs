@@ -59,9 +59,6 @@ namespace Waypoint
                     list.Add(current);
                 }
             }
-            
-            
-
             return list;
         }
     }

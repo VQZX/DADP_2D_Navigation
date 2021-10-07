@@ -53,6 +53,11 @@ public class NavigationClicker : MonoBehaviour
                     previousPosition = transform.position;
                     currentGoal = worldPosition;
                     var magnitude = Vector2.Distance(previousPosition, currentGoal);
+                    /*
+                     * speed = distance / time
+                     * time = distance / speed
+                     */
+                    
                     timeToGoal = magnitude / speedMPS;
                     state = CharacterState.Moving;
                     currentTime = 0;
