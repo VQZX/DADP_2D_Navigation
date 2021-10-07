@@ -61,8 +61,10 @@ namespace Waypoint
                 if (currentTime > timeToGoal)
                 {
                     transform.position = goalNode.position;
+                    currentNode = goalNode;
                     currentTime = 0;
                     SetNextPointInPath();
+                    return;
                 }
                 var percentage = currentTime / timeToGoal;
                 var nextPosition = Vector3.Lerp(currentNode.position, goalNode.position, percentage);
@@ -72,7 +74,7 @@ namespace Waypoint
 
         private void SetNextPointInPath()
         {
-            if (path.Count < 2)
+            if (path.Count == 1)
             {
                 state = CharacterState.Idle;
                 return;

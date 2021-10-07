@@ -45,14 +45,16 @@ namespace Waypoint
             {
                 for (var index = beginIndex; index <= endIndex; index++)
                 {
+                    Debug.Log(index);
                     var current = waypointNodes[index];
                     list.Add(current);
                 }
             }
             else if (endIndex < beginIndex)
             {
-                for (var index = endIndex; index >= beginIndex; index--)
+                for (var index = beginIndex; index >= endIndex; index--)
                 {
+                    Debug.Log(index);
                     var current = waypointNodes[index];
                     list.Add(current);
                 }
